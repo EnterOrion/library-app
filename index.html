@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Your Library</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    
-</body>
+    <link rel="stylesheet" href="style.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <h1>Welcome to your library</h1>
+    <form action="" id="add_book">
+      <label for="book_name">Title of book:</label>
+      <input type="text" name="book_name" id="book_name" required />
+      <label for="author_name">Author:</label>
+      <input type="text" name="author_name" id="author_name" required />
+      <label for="page_number">Pages:</label>
+      <input type="number" name="page_number" id="page_number" required />
+      <label for="read_validity">Completed:</label>
+      <select name="read_validity" id="read_validity">
+        <option value="yes">Yes</option>
+        <option value="no">No</option>
+      </select>
+      <button value="add" type="submit">Add</button>
+    </form>
+  </body>
 </html>
