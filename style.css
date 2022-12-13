@@ -5,6 +5,7 @@ body, html {
 body {
     background-color: beige;
     display: flex;
+    gap: 5px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -13,7 +14,7 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    height: 31.25rem;
+    height: 15rem;
     width: 31.25rem;
     margin-top: 3.125rem;
 }
@@ -23,4 +24,24 @@ button {
     margin-top: 1rem;
     height: 2.125rem;
     width: 4rem;
+}
+
+
+table, tr, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    margin-top: 0.35rem;
+}
+
+th {
+    border-right: 1px solid black;
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+}
+
+th:last-of-type {
+    border-right: 0px;
 }
