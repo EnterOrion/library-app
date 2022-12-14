@@ -1,4 +1,5 @@
 let myLibrary = [];
+let i = 1;
 const form = document.getElementById("add_book");
 const table = document.getElementById("library_table");
 
@@ -14,6 +15,8 @@ form.addEventListener("submit", (event) => {
   addBook();
   displayLibrary();
   clearForm();
+  
+  
 });
 
 function Book(title, author, pages, read) {
@@ -39,15 +42,54 @@ function clearForm() {
 }
 
 function displayLibrary() {
+  
+  const button = document.createElement('BUTTON');
+  const text = document.createTextNode("Delete");
+  button.appendChild(text);
+  button.setAttribute('id',`delete_button ${i}`);
+
+
+  const button2 = document.createElement('BUTTON');
+  const text2 = document.createTextNode(read.value);
+  button2.appendChild(text2);
+  button2.setAttribute('id',`complete_button ${i}`);
+   
     const row = table.insertRow(1);
+    row.setAttribute('id', i);
+
     const title_cell = row.insertCell(0);
     const author_cell = row.insertCell(1);
     const pages_cell = row.insertCell(2);
     const completed_cell = row.insertCell(3);
+    const delete_cell = row.insertCell(4);
     
     title_cell.innerHTML = title.value;
     author_cell.innerHTML = author.value;
     pages_cell.innerHTML = pages.value;
-    completed_cell.innerHTML = read.value;
+    completed_cell.appendChild(button2);
+    delete_cell.appendChild(button);
+    
+    i++;
+
+    const delete_action = document.getElementById(`delete_button ${(i-1)}`);
+  
+    delete_action.addEventListener("click", (event) => {
+      let deleteId = delete_action.id.split(" ").pop(); 
+      console.log(deleteId)
+      let deleteRow = document.getElementById(deleteId);
+      row.parentNode.removeChild(deleteRow);
+  });
+
+  const complete_action = document.getElementById(`complete_button ${(i-1)}`);
+    complete_action.addEventListener("click", (event) => {
+      console.log(complete_action.innerHTML);
+    
+      if (complete_action.innerHTML == "yes") {
+        complete_action.innerHTML = "no";
+      }
+      else {
+        complete_action.innerHTML = "yes";
+      }
+  })
 
 }
