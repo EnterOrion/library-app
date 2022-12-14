@@ -43,6 +43,7 @@ th {
     border-right: 1px solid black;
     padding-left: 2.5rem;
     padding-right: 2.5rem;
+    background-color: lightgrey;
 }
 
 th:last-of-type {
@@ -57,4 +58,19 @@ td:nth-child(5){
     line-height: 4.375rem;
 }
 
+[id ^="delete_button"] {
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+}
 
+
+.green_button {
+    background-color: rgb(147, 255, 147);
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+}
+
+.red_button {
+    background-color: rgb(255, 88, 88);
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px 0px rgba(0,0,0,0.3);
+}

@@ -51,6 +51,13 @@ function displayLibrary() {
 
   const button2 = document.createElement('BUTTON');
   const text2 = document.createTextNode(read.value);
+  if (read.value == "Yes") {
+    button2.setAttribute('class', 'green_button')
+  }
+  else {
+    button2.setAttribute('class', 'red_button')
+  }
+
   button2.appendChild(text2);
   button2.setAttribute('id',`complete_button ${i}`);
    
@@ -84,11 +91,13 @@ function displayLibrary() {
     complete_action.addEventListener("click", (event) => {
       console.log(complete_action.innerHTML);
     
-      if (complete_action.innerHTML == "yes") {
-        complete_action.innerHTML = "no";
+      if (complete_action.innerHTML == "Yes") {
+        complete_action.innerHTML = "No";
+        button2.setAttribute('class', 'red_button')
       }
       else {
-        complete_action.innerHTML = "yes";
+        complete_action.innerHTML = "Yes";
+        button2.setAttribute('class', 'green_button')
       }
   })
 
